@@ -85,7 +85,7 @@ img {
   color: #747bff;
 }
 
-/* TIMER */
+/* GALLERY */
 
 button {
   border-radius: 8px;
@@ -137,25 +137,6 @@ button[disabled] {
   cursor: not-allowed;
 }
 
-.timer {
-  margin-top: 32px;
-  display: flex;
-  gap: 24px;
-  max-width: 350px;
-}
-
-.timer .field {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #2e2f42;
-}
-
-.field .value {
-  font-size: 40px;
-  line-height: 1.2;
-}
-
 .fontAwesomeOpacity {
   opacity: 1 !important;
 }
@@ -164,29 +145,114 @@ button[disabled] {
   top: 30%;
 }
 
-/* PROMISE GENERETOR */
-
 .form,
-.form input,
-.form fieldset {
+.form input {
   max-width: 360px;
 }
-.form button {
-  width: 360px;
-}
 
-.form fieldset {
-  border-radius: 4px;
+.form-wrapper {
   display: flex;
   justify-content: center;
-  gap: 48px;
-  margin-bottom: 24px;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-fieldset input[type='radio'] {
-  width: 20px;
-  height: 20px;
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
 
+.gallery {
+  margin: 0 auto;
+  max-width: 1128px;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 40px 0;
+}
+
+.img-wrap {
+  width: calc((100% - 48px) / 3);
+  transition: scale 250ms linear;
+  border: 1px solid #808080;
+}
+
+.gallery-info-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 20px;
+}
+.gallery-info-wrapper div {
+  text-align: center;
+}
+
+.gallery-info-wrapper .title {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.gallery-info-wrapper .subtitle {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.gallery-item:hover,
+.gallery-item:focus {
+  scale: 1.05;
+}
+
+.img-wrap img {
+  aspect-ratio: 16 / 9;
+  height: auto;
+  object-fit: cover;
+}
+
+/* LOADER */
+.loader-wrapp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  display: block;
+  position: relative;
+  height: 12px;
+  width: 20%;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.loader:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: #4e75ff;
+  animation: 6s prog ease-in infinite;
+}
+
+@keyframes prog {
+  to {
+    width: 100%;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+/* END */
 
 /* END */
